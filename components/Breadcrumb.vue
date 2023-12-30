@@ -1,7 +1,7 @@
 <template>
   <!-- <div class="-intro-x breadcrumb breadcrumb--light mr-auto"> -->
   <div class=" breadcrumb breadcrumb--light mr-auto">
-    <a href="#" class="!text-white">Dashboard</a>
+    <!-- <a href="#" class="!text-white">Dashboard</a> -->
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"

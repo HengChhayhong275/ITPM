@@ -59,7 +59,7 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     ['nuxt-i18n', Config.i18n],
-    '@nuxtjs/auth-next', // https://auth.nuxtjs.org/
+    // '@nuxtjs/auth-next', // https://auth.nuxtjs.org/
     '@nuxt/image', // https://image.nuxtjs.org
   ],
 
@@ -74,7 +74,7 @@ export default {
   privateRuntimeConfig: {
     noProxy,
   },
-  auth: Config.auth,
+  // auth: Config.auth,
   image: Config.image,
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
