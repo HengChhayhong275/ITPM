@@ -3,3 +3,7 @@
         this is user-profile/attendace
     </div>
 </template>
+
+<script>
+
+</script>
