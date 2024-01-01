@@ -3278,7 +3278,7 @@
       flex-wrap: wrap;
   margin: 0;
 }
-.top-nav > ul > li:first-child > a:not(.top-menu--active) {
+/* .top-nav > ul > li:first-child > a:not(.top-menu--active) {
   opacity: 0;
   -webkit-transform: translateY(50px);
       -ms-transform: translateY(50px);
@@ -3289,14 +3289,14 @@
   animation-fill-mode: forwards;
   -webkit-animation-delay: 0.1s;
   animation-delay: 0.1s;
-}
+} */
 .top-nav > ul > li:first-child > a.top-menu--active {
   -webkit-animation: intro-active-menu-animation 0.4s ease-in-out 0.33333s;
   animation: intro-active-menu-animation 0.4s ease-in-out 0.33333s;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
-.top-nav > ul > li:nth-child(2) > a:not(.top-menu--active) {
+/* .top-nav > ul > li:nth-child(2) > a:not(.top-menu--active) {
   opacity: 0;
   -webkit-transform: translateY(50px);
       -ms-transform: translateY(50px);
@@ -3307,14 +3307,14 @@
   animation-fill-mode: forwards;
   -webkit-animation-delay: 0.2s;
   animation-delay: 0.2s;
-}
+} */
 .top-nav > ul > li:nth-child(2) > a.top-menu--active {
   -webkit-animation: intro-active-menu-animation 0.4s ease-in-out 0.33333s;
   animation: intro-active-menu-animation 0.4s ease-in-out 0.33333s;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
-.top-nav > ul > li:nth-child(3) > a:not(.top-menu--active) {
+/* .top-nav > ul > li:nth-child(3) > a:not(.top-menu--active) {
   opacity: 0;
   -webkit-transform: translateY(50px);
       -ms-transform: translateY(50px);
@@ -3325,14 +3325,14 @@
   animation-fill-mode: forwards;
   -webkit-animation-delay: 0.3s;
   animation-delay: 0.3s;
-}
+} */
 .top-nav > ul > li:nth-child(3) > a.top-menu--active {
   -webkit-animation: intro-active-menu-animation 0.4s ease-in-out 0.33333s;
   animation: intro-active-menu-animation 0.4s ease-in-out 0.33333s;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
-.top-nav > ul > li:nth-child(4) > a:not(.top-menu--active) {
+/* .top-nav > ul > li:nth-child(4) > a:not(.top-menu--active) {
   opacity: 0;
   -webkit-transform: translateY(50px);
       -ms-transform: translateY(50px);
@@ -3343,14 +3343,14 @@
   animation-fill-mode: forwards;
   -webkit-animation-delay: 0.4s;
   animation-delay: 0.4s;
-}
+} */
 .top-nav > ul > li:nth-child(4) > a.top-menu--active {
   -webkit-animation: intro-active-menu-animation 0.4s ease-in-out 0.33333s;
   animation: intro-active-menu-animation 0.4s ease-in-out 0.33333s;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
-.top-nav > ul > li:nth-child(5) > a:not(.top-menu--active) {
+/* .top-nav > ul > li:nth-child(5) > a:not(.top-menu--active) {
   opacity: 0;
   -webkit-transform: translateY(50px);
       -ms-transform: translateY(50px);
@@ -3361,14 +3361,14 @@
   animation-fill-mode: forwards;
   -webkit-animation-delay: 0.5s;
   animation-delay: 0.5s;
-}
+} */
 .top-nav > ul > li:nth-child(5) > a.top-menu--active {
   -webkit-animation: intro-active-menu-animation 0.4s ease-in-out 0.33333s;
   animation: intro-active-menu-animation 0.4s ease-in-out 0.33333s;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
-.top-nav > ul > li:nth-child(6) > a:not(.top-menu--active) {
+/* .top-nav > ul > li:nth-child(6) > a:not(.top-menu--active) {
   opacity: 0;
   -webkit-transform: translateY(50px);
       -ms-transform: translateY(50px);
@@ -3379,7 +3379,7 @@
   animation-fill-mode: forwards;
   -webkit-animation-delay: 0.6s;
   animation-delay: 0.6s;
-}
+} */
 .top-nav > ul > li:nth-child(6) > a.top-menu--active {
   -webkit-animation: intro-active-menu-animation 0.4s ease-in-out 0.33333s;
   animation: intro-active-menu-animation 0.4s ease-in-out 0.33333s;
