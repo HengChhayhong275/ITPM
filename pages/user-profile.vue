@@ -1,7 +1,26 @@
 <template>
     <div>
+<<<<<<< HEAD
       this is in page dir 
       <UserProfileInfo />
+=======
+      <section class="border border-red-100 mt-10">
+        <div class="border border-red-600 m-2">
+          <div >
+            <div>
+              <img class="w-24 h-24 rounded-full" :src="require('assets/img/profile-pic/profile-2.png')" alt="profile">
+            </div>
+            <div>
+              <h1 class="font-bold">Melisa John</h1>
+              <h2 class="text-gray-400">ID : 168</h2>
+              <h2 class="text-blue-600">Student</h2>
+            </div>
+          </div>
+          <div></div>
+        </div>
+        <div></div>
+      </section>
+>>>>>>> bddf9c121fdd349ae4b5fe022c354f272000aa5d
       <!-- <ul>
         <li v-for="(item, index) in userProfileMenus" :key="index">
           <NuxtLink :to="item.path">
@@ -12,9 +31,15 @@
           </NuxtLink>
         </li>
       </ul> -->
+<<<<<<< HEAD
       <div class="bg-green-500 min-h-[10rem]">
         <nuxt />
       </div>
+=======
+      <!-- <div class="bg-green-500 min-h-[10rem]">
+        <Nuxt />
+      </div> -->
+>>>>>>> bddf9c121fdd349ae4b5fe022c354f272000aa5d
     </div>
   </template>
   <script>
