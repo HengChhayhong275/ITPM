@@ -13,8 +13,10 @@
   --border-color-base: #d9d9d9;
   --box-shadow-base: 0 2px 8px rgba(0, 0, 0, 0.15);
 
-  /* Layout */
+  --border-radius-base: 22px;
 
+  /* Layout */
+  
   /* --layout-body-background: #fff;
   --layout-header-background: linear-gradient(270deg, #0acffe 0, #495aff); */
 

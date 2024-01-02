@@ -3,8 +3,8 @@
     <HeaderMobileMenu :menus="menus" />
     <HeaderLogin />
     <HeaderTopNav :menus="menus" />
-    <div class="content shadow-lg p-[1rem]" style="background-color:red !important;">
-        <nuxt-child class="bg-blue-500 rounded" />
+    <div class="content shadow-lg p-4">
+        <nuxt-child />
     </div>
   </div>
 </template>
