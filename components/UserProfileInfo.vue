@@ -21,7 +21,7 @@
                         <div class="top-menu__icon ">
                             <span v-html="item.icon"></span>
                         </div>
-                        <div class="text-color-grey">{{ item.title }}</div>
+                        <div class="text-color-secondary font-semibold text-[0.99rem]">{{ item.title }}</div>
                     </li>
                 </ul>
             </div>
@@ -98,10 +98,8 @@ export default {
     border-radius: 10rem;
 }
 
-.text-color-grey{
+.text-color-secondary{
     color: var(--text-color-secondary);
-    font-weight:500;
-    font-size: .99rem;
 }
 
 .rounded-base{
