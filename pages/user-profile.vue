@@ -1,8 +1,8 @@
-
 <template>
     <div>
       this is in page dir 
-      <ul>
+      <UserProfileInfo />
+      <!-- <ul>
         <li v-for="(item, index) in userProfileMenus" :key="index">
           <NuxtLink :to="item.path">
             <div class="top-menu__icon">
@@ -11,15 +11,18 @@
             <div class="top-menu__title">{{ item.title }}</div>
           </NuxtLink>
         </li>
-      </ul>
+      </ul> -->
       <div class="bg-green-500 min-h-[10rem]">
-        <nuxt-child />
+        <nuxt />
       </div>
     </div>
   </template>
   <script>
+import UserProfileInfo from "~/components/UserProfileInfo.vue"
+  
   export default {
     name: 'UserProfile',
+    components:{UserProfileInfo, },
     layout:'default',
     middleware: 'auth',
     head: {

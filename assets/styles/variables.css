@@ -1,5 +1,5 @@
 :root {
-  /* --primary-color: #005bea;
+  --primary-color: #005bea;
   --link-color: #1890ff;
   --success-color: #30b103;
   --warning-color: #57534d;
@@ -11,7 +11,7 @@
   --disabled-color: rgba(0, 0, 0, 0.25);
   --border-radius-base: 4px;
   --border-color-base: #d9d9d9;
-  --box-shadow-base: 0 2px 8px rgba(0, 0, 0, 0.15); */
+  --box-shadow-base: 0 2px 8px rgba(0, 0, 0, 0.15);
 
   /* Layout */
 

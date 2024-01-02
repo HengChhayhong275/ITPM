@@ -3232,15 +3232,16 @@
   }
 }
 .content {
-  border-radius: 30px;
-  padding: 0 22px;
+  border-radius: 40px;
+  padding:1rem !important;
   min-height: 100vh;
   min-width: 0;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 0%;
           flex: 1 1 0%;
   --tw-bg-opacity: 1;
-  background-color: rgba(241, 245, 248, var(--tw-bg-opacity));
+  /* background-color: rgba(241, 245, 248, var(--tw-bg-opacity)); */
+  background-color: red;
   padding-bottom: 2.5rem;
 }
 .dark .content {
@@ -3260,6 +3261,16 @@
   height: 1px;
   width: 100%;
 }
+
+/* Set the style for the first child of main nav bar */
+.content > :first-child {
+  border-radius: 22px;
+  background-color: white;
+  height:100%;
+  padding:1rem;
+  overflow:hidden;
+}
+
 .top-nav {
   position: relative;
   z-index: 50;
