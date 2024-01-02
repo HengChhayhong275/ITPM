@@ -1,8 +1,23 @@
 
 <template>
     <div>
-      this is in page dir 
-      <ul>
+      <section class="border border-red-100 mt-10">
+        <div class="border border-red-600 m-2">
+          <div >
+            <div>
+              <img class="w-24 h-24 rounded-full" :src="require('assets/img/profile-pic/profile-2.png')" alt="profile">
+            </div>
+            <div>
+              <h1 class="font-bold">Melisa John</h1>
+              <h2 class="text-gray-400">ID : 168</h2>
+              <h2 class="text-blue-600">Student</h2>
+            </div>
+          </div>
+          <div></div>
+        </div>
+        <div></div>
+      </section>
+      <!-- <ul>
         <li v-for="(item, index) in userProfileMenus" :key="index">
           <NuxtLink :to="item.path">
             <div class="top-menu__icon">
@@ -11,10 +26,10 @@
             <div class="top-menu__title">{{ item.title }}</div>
           </NuxtLink>
         </li>
-      </ul>
-      <div class="bg-green-500 min-h-[10rem]">
-        <nuxt-child />
-      </div>
+      </ul> -->
+      <!-- <div class="bg-green-500 min-h-[10rem]">
+        <Nuxt />
+      </div> -->
     </div>
   </template>
   <script>
