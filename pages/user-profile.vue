@@ -15,7 +15,6 @@
       <div class="min-h-[10rem]">
         <nuxt />
       </div>
-
     </div>
   </template>
   <script>

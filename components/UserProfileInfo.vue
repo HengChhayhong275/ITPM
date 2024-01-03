@@ -12,7 +12,6 @@
                     <li class="profile-menu-active font-semibold">Student</li>
                 </ul>
             </div>
-
             <div class="middle-line"></div>
             
             <div class="w-[50%]">
