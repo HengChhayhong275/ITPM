@@ -94,6 +94,24 @@ module.exports = {
       borderColor: {
         DEFAULT: '#d9d9d9',
       },
+      borderRadius: {
+        8: '8px',
+        10:"10px",
+        12:"12px",
+        14:"14px",
+        16:"16px",
+        18:"18px",
+        22:"22px",
+      },
+    },
+    fontSize: {
+      14: '14px',
+      16: '16px',
+      18: '18px',
+      20: '20px',
+      22: '22px',
+      24: '24px',
+      26: '26px',
     },
   },
   variants: {

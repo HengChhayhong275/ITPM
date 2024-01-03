@@ -1,11 +1,11 @@
 <template>
     <div>
-        <ul class="flex flex-wrap justify-between gap-4">
+        <ul class="font-semibold text-white text-18 flex flex-wrap justify-between gap-4">
             <li v-for="(item, index) in menus" :key="index">
-                <div class="relative flex justify-center items-center w-[20rem] h-[8rem] rounded-[1rem] font-semibold text-white"
+                <div class="relative flex justify-center items-center w-[20rem] h-[8rem] rounded-16"
                     :style="{ backgroundColor: item.color }">
                     <div class="absolute left-4 top-4">{{ item.title }}</div>
-                    <div class="text-[24px]">{{ item.value }}</div>
+                    <div class="text-24">{{ item.value }}</div>
                 </div>
             </li>
         </ul>
