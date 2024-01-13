@@ -1,20 +1,14 @@
 <template>
     <div class="flex flex-col gap-4">
-        {{ selectedDate }}
-        {{ selectedDate }}
-        {{ selectedDate }}
-        {{ selectedDate }}
-        {{ selectedDate }}
-        {{ selectedDate }}
         <attendanceSummary :menus="summaryMenus" />
         <div class="p-4 text-20 font-semibold text-default rounded-8 bg-white flex justify-between">
             <div class="w-[48%]">
                 <div class="mb-[.5rem]">Date selection</div>
-                <DateRangeSelection v-model="selectedDate" />
+                <DateRangeSelection :menus="dateList" />
             </div>
             <div class="w-[48%]">
                 <div class="mb-[.5rem]">Rows selection</div>
-                <ViewRows v-model="selectedRowValue" :menus="rowOptions" />
+                <ViewRows v-model="selectRowValue" :menus="rowOptions" />
             </div>
         </div>
     </div>
@@ -28,8 +22,7 @@ export default {
     components: { attendanceSummary, DateRangeSelection, ViewRows },
     data() {
         return {
-            selectedRowValue: 10,
-            selectedDate: "weerfrfer"
+            selectRowValue: 10,
         }
     },
 
@@ -39,31 +32,31 @@ export default {
                 { value: 10 }, { value: 100 }, { value: 1000 }, { value: 10000 }
             ]
         },
-        // dateList() {
-        //     return [
-        //         {
-        //             value: {
-        //                 startDate: "10.10.2023",
-        //                 endDate: "13.01.2024"
-        //             },
-        //             title: "Today",
-        //         },
-        //         {
-        //             value: {
-        //                 startDate: "10.10.2023",
-        //                 endDate: "13.01.2024"
-        //             },
-        //             title: "Today",
-        //         },
-        //         {
-        //             value: {
-        //                 startDate: "10.10.2023",
-        //                 endDate: "13.01.2024"
-        //             },
-        //             title: "Today",
-        //         },
-        //     ]
-        // },
+        dateList() {
+            return [
+                {
+                    value: {
+                        startDate: "10.10.2023",
+                        endDate: "13.01.2024"
+                    },
+                    title: "Today",
+                },
+                {
+                    value: {
+                        startDate: "10.10.2023",
+                        endDate: "13.01.2024"
+                    },
+                    title: "Today",
+                },
+                {
+                    value: {
+                        startDate: "10.10.2023",
+                        endDate: "13.01.2024"
+                    },
+                    title: "Today",
+                },
+            ]
+        },
         summaryMenus() {
             return [
                 {
@@ -94,7 +87,7 @@ export default {
     },
     mounted() {
         // Set the default value for selectRowValue based on rowOptions
-        this.selectedRowValue = this.rowOptions[0].value;
+        this.selectRowValue = this.rowOptions[0].value;
     },
     methods: {
 

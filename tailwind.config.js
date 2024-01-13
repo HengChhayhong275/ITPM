@@ -63,6 +63,7 @@ module.exports = {
       //   callToAction: '450px',
       // },
       colors: {
+        dark: { blue: '#045FD7' },
         brand: {
           100: '#ccdefb',
           200: '#99bdf7',
@@ -96,12 +97,12 @@ module.exports = {
       },
       borderRadius: {
         8: '8px',
-        10:"10px",
-        12:"12px",
-        14:"14px",
-        16:"16px",
-        18:"18px",
-        22:"22px",
+        10: '10px',
+        12: '12px',
+        14: '14px',
+        16: '16px',
+        18: '18px',
+        22: '22px',
       },
     },
     fontSize: {
