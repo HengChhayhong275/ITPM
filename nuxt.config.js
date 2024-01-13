@@ -2,6 +2,7 @@ import Config from './config'
 const noProxy = process.env.NO_PROXY === 'true'
 
 export default {
+  ssr:false,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'student-portfolio',

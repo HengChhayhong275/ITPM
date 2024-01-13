@@ -1,7 +1,11 @@
 <template>
-    <a-space direction="vertical" :size="12">
+    <div>
+        Date range picker
+        
+    </div>
+    <!-- <a-space direction="vertical" :size="12">
       <a-range-picker v-model="value4" :format="dateFormat" />
-    </a-space>
+    </a-space> -->
   </template>
   <script>
 

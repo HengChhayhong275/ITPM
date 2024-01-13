@@ -8,7 +8,7 @@
             </div>
             <div class="w-[48%]">
                 <div class="mb-[.5rem]">Rows selection</div>
-                <ViewRows />
+                <ViewRows v-model="selectRowValue" :menus="rowOptions" />
             </div>
         </div>
     </div>
@@ -22,14 +22,16 @@ export default {
     components: { attendanceSummary, DateRangeSelection, ViewRows },
     data() {
         return {
-            value1: '',
-            selectedKeys: '',
-            selectedValue: '',
-
+            selectRowValue: 10,
         }
     },
 
     computed: {
+        rowOptions() {
+            return [
+                { value: 10 }, { value: 100 }, { value: 1000 }, { value: 10000 }
+            ]
+        },
         summaryMenus() {
             return [
                 {
@@ -56,23 +58,19 @@ export default {
 
             ]
         },
-        methods: {
-            getItem(label, key, icon, children, type) {
-                return {
-                    key,
-                    icon,
-                    children,
-                    label,
-                    type,
-                };
-            }
 
-            //     handleClick: MenuProps['onClick'] = e => {
-            //     // console.log('click', e);
-            // }, 
-        },
-        watch: {
-        }
-    }
+    },
+    mounted() {
+        // Set the default value for selectRowValue based on rowOptions
+        this.selectRowValue = this.rowOptions[0].value;
+    },
+    methods: {
+
+        //     handleClick: MenuProps['onClick'] = e => {
+        //     // console.log('click', e);
+        // }, 
+    },
+    // watch: {
+    // }
 }
 </script>
