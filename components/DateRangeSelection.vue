@@ -2,23 +2,27 @@
 <!-- eslint-disable vue/no-v-html -->
 <template>
     <div>
-        {{ "Local" + localValue }}
         <a-dropdown v-model="dropdownVisible" :trigger="['click']">
             <a class="ant-dropdown-link" @click.prevent>
                 <div class="flex gap-2 p-4 py-2 text-18 text-default border-[1px] border-DEFAULT rounded-8">
                     <span v-html="carlendarIcon"></span>
+                    {{ dateTitle }}
                 </div>
             </a>
 
             <!-- Dropdown content -->
             <template #overlay>
-                <div class="flex flex-col gap-4 p-4 font-semibold rounded-16 bg-white overflow-hidden shadow-md">
+                <div class="w-full max-w-[45vw] flex flex-col gap-4 p-4 font-semibold rounded-16 bg-white overflow-hidden shadow-md">
+                    <div class="px-4 mb-[-1.75rem] flex justify-between text[15px] font-semibold text-secondary">
+                        <span class="w-[63%]">From</span>
+                        <span class="w-[37%]">To</span>
+                    </div>
                     <a-range-picker v-model="localValue" class="ant-date-piacker-custom" :disabled-date="disabledDate"
                         :format="dateFormat" @click.stop />
 
                     <button
                         class="w-full rounded-8 text-18 p-4 py-2  flex justify-center bg-dark-blue border-[1px] border-dark-blue"
-                        @click="applyDateChange(localValue)">
+                        @click="applyFormatFromDatePicker(localValue); applyDateChange(localValue)">
                         <div class="text-white font-semibold">APPLY</div>
                     </button>
 
@@ -29,7 +33,7 @@
                         <li v-for="(item, index) in dateMenus" :key="index">
                             <button
                                 class="w-full rounded-8 text-18 text-default py-2 flex justify-center border-[1px] border-default hover:text-dark-blue hover:border-dark-blue"
-                                @click="localValue = item.value; applyDateChange(item.value);">
+                                @click="localValue = item.value; dateTitle = item.title; applyDateChange(item.value);">
                                 {{ item.title }}
                             </button>
                         </li>
@@ -45,13 +49,14 @@ import moment from 'moment';
 export default {
     props: {
         value: {
-            type: [Number, String],
-            default: 0,
+            type: Object,
+            default: null,
         },
     },
     data() {
         return {
             localValue: null,
+            dateTitle: '',
             dropdownVisible: false,
 
             today: '',
@@ -110,26 +115,31 @@ export default {
         this.lastMonthStart = moment().subtract(1, 'month').startOf('month');
         this.lastMonthEnd = moment().subtract(1, 'month').endOf('month');
 
+        // defult date on loading the page
+        this.localValue = [this.today, this.today]
+        this.dateTitle = "Today"
     },
-    // mounted() {
-    //     this.today = moment().format(this.dateFormat);
-    //     this.yesterday = moment().subtract(1, 'day').format(this.dateFormat);
-    //     this.currentWeekStart = moment().startOf('week').format(this.dateFormat);
-    //     this.currentWeekEnd = moment().endOf('week').format(this.dateFormat);
-    //     this.lastMonthStart = moment().subtract(1, 'month').startOf('month').format(this.dateFormat);
-    //     this.lastMonthEnd = moment().subtract(1, 'month').endOf('month').format(this.dateFormat);
-    // },
     methods: {
+
         stopPropagation(event) {
             // Stop event propagation to prevent dropdown from closing
             // espiacially when click on date range picker
             event.stopPropagation();
         },
+        momentToDateString(arrMomentObj) {
+            if (!arrMomentObj) return ''
+            return {
+                "startDate": arrMomentObj[0].format(this.dateFormat),
+                "endDate": arrMomentObj[1].format(this.dateFormat),
+            }
+        },
+        applyFormatFromDatePicker(newVal) {
+            const date = this.momentToDateString(newVal)
+            this.dateTitle = date.startDate.toString() + ' - ' + date.endDate.toString();
+        },
         emitDate() {
             // Emit the value when the radio group value changes and can interact using v-model
-            this.$emit("input", this.localValue);
-            console.log(this.localValue.toString());
-            // this.$emit("input", this.momentToDateString(this.localValue));
+            this.$emit("input", this.momentToDateString(this.localValue));
         },
         applyDateChange(newValue) {
             this.localValue = newValue
@@ -146,7 +156,7 @@ export default {
      so the last choice is to override those styles in scope of the file
   */
 .ant-date-piacker-custom {
-    width: 100% !important;
+    max-width: 100% !important;
     padding: 10px !important;
 }
 </style>

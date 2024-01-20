@@ -1,11 +1,8 @@
 <template>
     <div class="flex flex-col gap-4">
-        {{ selectedDate }}
-        {{ selectedDate }}
-        {{ selectedDate }}
-        {{ selectedDate }}
-        {{ selectedDate }}
-        {{ selectedDate }}
+        <!-- <span v-for="(item, index) in selectedOptions" :key="index"> {{ item.title + " : : " + item.value }}</span> -->
+        <!-- {{ selectedOptions }} -->
+
         <attendanceSummary :menus="summaryMenus" />
         <div class="p-4 text-20 font-semibold text-default rounded-8 bg-white flex justify-between">
             <div class="w-[48%]">
@@ -17,6 +14,24 @@
                 <ViewRows v-model="selectedRowValue" :menus="rowOptions" />
             </div>
         </div>
+        <div class="flex gap-4">
+            <section class="w-[23%]">
+                <ul class="rounded-16 bg-white p-4 flex flex-col gap-4">
+                    <li class="pb-4 border-b border-default">
+                        <FilterCheckBox v-model="selectedOptions" title="Filter By Attendances" />
+                    </li>
+                    <li class="pb-4 border-b border-default">
+                        <FilterCheckBox v-model="selectedOptions" title="Filter By Subjects" />
+                    </li>
+                    <li class="pb-4 ">
+                        <FilterCheckBox v-model="selectedOptions" title="Filter By Teacher" />
+                    </li>
+                </ul>
+            </section>
+            <section class="w-[77%] bg-blue-200">
+                <AttendanceList />
+            </section>
+        </div>
     </div>
 </template>
 
@@ -24,12 +39,15 @@
 import attendanceSummary from "~/components/attendance/attendance-summary.vue";
 import DateRangeSelection from "~/components/DateRangeSelection.vue";
 import ViewRows from "~/components/ViewRows.vue";
+import FilterCheckBox from "~/components/FilterCheckBox.vue"
+import AttendanceList from "~/components/AttendanceList.vue"
 export default {
-    components: { attendanceSummary, DateRangeSelection, ViewRows },
+    components: { attendanceSummary, DateRangeSelection, ViewRows, FilterCheckBox, AttendanceList },
     data() {
         return {
             selectedRowValue: 10,
-            selectedDate: "weerfrfer"
+            selectedDate: "weerfrfer",
+            selectedOptions: []
         }
     },
 
@@ -37,6 +55,30 @@ export default {
         rowOptions() {
             return [
                 { value: 10 }, { value: 100 }, { value: 1000 }, { value: 10000 }
+            ]
+        },
+        filterOptions() {
+            return [
+                {
+                    title: "opt1",
+                    value: false
+                },
+                {
+                    title: "opt2",
+                    value: false
+                },
+                {
+                    title: "opt1",
+                    value: false
+                },
+                {
+                    title: "opt1",
+                    value: false
+                },
+                {
+                    title: "opt1",
+                    value: false
+                },
             ]
         },
         // dateList() {
@@ -95,6 +137,7 @@ export default {
     mounted() {
         // Set the default value for selectRowValue based on rowOptions
         this.selectedRowValue = this.rowOptions[0].value;
+        this.selectedOptions = this.filterOptions;
     },
     methods: {
 
