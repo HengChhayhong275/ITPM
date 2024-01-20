@@ -64,6 +64,10 @@ module.exports = {
       // },
       colors: {
         dark: { blue: '#045FD7' },
+        attend: '#07D735',
+        late: '#FF9900',
+        permission: '#EA9999',
+        absent: '#CF2A27',
         brand: {
           100: '#ccdefb',
           200: '#99bdf7',
@@ -88,6 +92,7 @@ module.exports = {
         },
       },
       textColor: {
+        b75: 'rgba(0, 0, 0, 0.75)',
         DEFAULT: 'rgba(0, 0, 0, 0.65)',
         default: 'rgba(0, 0, 0, 0.65)',
         secondary: 'rgba(0, 0, 0, 0.45)',
@@ -108,6 +113,7 @@ module.exports = {
     fontSize: {
       14: '14px',
       16: '16px',
+      15: '15px',
       18: '18px',
       20: '20px',
       22: '22px',

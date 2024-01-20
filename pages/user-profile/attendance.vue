@@ -16,6 +16,9 @@
         </div>
         <div class="flex gap-4">
             <section class="w-[23%]">
+                <div class="py-4 text-default text-20 font-semibold">
+                    Filter By
+                </div>
                 <ul class="rounded-16 bg-white p-4 flex flex-col gap-4">
                     <li class="pb-4 border-b border-default">
                         <FilterCheckBox v-model="selectedOptions" title="Filter By Attendances" />
@@ -28,8 +31,15 @@
                     </li>
                 </ul>
             </section>
-            <section class="w-[77%] bg-blue-200">
-                <AttendanceList />
+            <section class="w-[77%]">
+                <div class="py-4 text-default text-20 font-semibold flex justify-between">
+                    <span>
+                        Attendance List
+                    </span>
+                    <Pagination />
+                </div>
+                <AttendanceList :heads="headAttendanceTitles" :menus="attendanceMenus" />
+                <Pagination />
             </section>
         </div>
     </div>
@@ -41,17 +51,47 @@ import DateRangeSelection from "~/components/DateRangeSelection.vue";
 import ViewRows from "~/components/ViewRows.vue";
 import FilterCheckBox from "~/components/FilterCheckBox.vue"
 import AttendanceList from "~/components/AttendanceList.vue"
+import Pagination from "~/components/Pagination.vue"
 export default {
-    components: { attendanceSummary, DateRangeSelection, ViewRows, FilterCheckBox, AttendanceList },
+    components: { attendanceSummary, DateRangeSelection, ViewRows, FilterCheckBox, AttendanceList, Pagination },
     data() {
         return {
             selectedRowValue: 10,
             selectedDate: "weerfrfer",
-            selectedOptions: []
+            selectedOptions: [],
+            attendanceMenus: [
+                {
+                    subject: "STweerferferferferferferferferferH",
+                    session: "7:00 - 9:00, Jan 10, 2022",
+                    status: "late",
+                },
+                {
+                    subject: "STH",
+                    session: "12 12 2014",
+                    status: "attend",
+                },
+                {
+                    subject: "STH",
+                    session: "12 12 2014",
+                    status: "permission",
+                },
+                {
+                    subject: "STH",
+                    session: "12 12 2014",
+                    status: "absent",
+                },
+            ]
         }
     },
 
     computed: {
+        headAttendanceTitles() {
+            return [
+                "Subject",
+                "Session",
+                "Status"
+            ]
+        },
         rowOptions() {
             return [
                 { value: 10 }, { value: 100 }, { value: 1000 }, { value: 10000 }
