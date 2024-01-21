@@ -1,5 +1,5 @@
 <template>
-    <div class="rounded-16 bg-white">
+    <div class="attendance-list rounded-16 bg-white">
         <table>
             <thead class="text-15 text-secondary">
                 <tr>
@@ -55,19 +55,19 @@ export default {
 }
 </script>
 <style scoped>
-table {
+.attendance-list table {
     width: 100%;
     border-collapse: collapse;
 }
 
-th {
+.attendance-list  th {
     padding: 1rem;
     padding-left: 2rem;
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
 
-td {
+.attendance-list  td {
     padding: .5rem;
     padding-left: 2rem;
     text-align: left;
@@ -75,7 +75,7 @@ td {
 }
 
 
-tr:hover {
+.attendance-list  tr:hover {
     background-color: #f2f2f2;
 }
 
