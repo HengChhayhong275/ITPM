@@ -15,9 +15,11 @@
                     <td>{{ item.session }}</td>
                     <td :class="'text-' + item.status.toLowerCase()">{{ item.status }}</td>
                     <td>
-                        <button class="rounded-8 btn bg-dark-blue" style="font-size: 14px;">
-                            <div class="text-white">View Detail</div>
-                        </button>
+                        <nuxt-link :to="item.id">
+                            <button class="rounded-8 btn bg-dark-blue" style="font-size: 14px;">
+                                <div class="text-white">View Detail</div>
+                            </button>
+                        </nuxt-link>
                     </td>
                 </tr>
             </tbody>

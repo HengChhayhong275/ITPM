@@ -25,4 +25,9 @@ export default {
     }
 }
 </script>
-  
+<!-- <style scoped>
+.filter-checkbox-component >>> .ant-checkbox-input *{ 
+    color:red;
+    background-color: red;
+}
+</style> -->
