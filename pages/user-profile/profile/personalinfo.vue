@@ -224,4 +224,13 @@ export default{
     background-color: #2563eb;
     border: 1px solid #2563eb;
 }
+.cancel-btn:hover{
+    background-color: #2563eb;
+    color: white;
+}
+.update-btn:hover{
+    color: #2563eb;
+    background-color: white;
+
+}
 </style>
