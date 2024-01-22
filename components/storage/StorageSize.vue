@@ -10,14 +10,16 @@
                 <!-- class="core-transition-element w-0 h-[16px] bg-brand-500 rounded-16"></div> -->
             </div>
         </div>
-        <button class="flex justify-end">
-            <div class="text-16 text-brand-500 font-semibold">{{ linkTitle }}</div>
-        </button>
+        <div class="flex justify-end">
+            <ButtonORNuxtLink :title="linkTitle" is-button no-icon inject-class="text-14 text-brand-500" />
+        </div>
     </div>
 </template>
   
 <script>
+import ButtonORNuxtLink from '~/components/ButtonORNuxtLink.vue';
 export default {
+    components: { ButtonORNuxtLink },
     props: {
         totalSize: {
             type: Number,

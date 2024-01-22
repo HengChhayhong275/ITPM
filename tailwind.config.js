@@ -101,6 +101,7 @@ module.exports = {
         DEFAULT: '#d9d9d9',
       },
       borderRadius: {
+        6: '6px',
         8: '8px',
         10: '10px',
         12: '12px',
