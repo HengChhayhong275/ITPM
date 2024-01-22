@@ -1,6 +1,6 @@
 <template>
     <div>
-        <ul class="font-semibold text-white text-18 flex flex-wrap justify-between gap-4">
+        <ul class="font-semibold text-white text-18 flex flex-wrap justify-center gap-4">
             <li v-for="(item, index) in menus" :key="index">
                 <div class="relative flex justify-center items-center w-[20rem] h-[8rem] rounded-16"
                     :style="{ backgroundColor: item.color }">
@@ -11,7 +11,6 @@
         </ul>
     </div>
 </template>
-
 
 <script>
 export default {

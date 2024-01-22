@@ -15,7 +15,7 @@
                     <td>{{ item.session }}</td>
                     <td :class="'text-' + item.status.toLowerCase()">{{ item.status }}</td>
                     <td>
-                        <nuxt-link :to="item.id">
+                        <nuxt-link :to="urlPrefix + item.id">
                             <button class="rounded-8 btn bg-dark-blue" style="font-size: 14px;">
                                 <div class="text-white">View Detail</div>
                             </button>
@@ -37,6 +37,9 @@ export default {
         menus: {
             type: Array,
             default: null
+        }, urlPrefix: {
+            type: String,
+            default: ''
         }
     },
     data() {
@@ -60,14 +63,14 @@ export default {
     border-collapse: collapse;
 }
 
-.attendance-list  th {
+.attendance-list th {
     padding: 1rem;
     padding-left: 2rem;
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
 
-.attendance-list  td {
+.attendance-list td {
     padding: .5rem;
     padding-left: 2rem;
     text-align: left;
@@ -75,7 +78,7 @@ export default {
 }
 
 
-.attendance-list  tr:hover {
+.attendance-list tr:hover {
     background-color: #f2f2f2;
 }
 

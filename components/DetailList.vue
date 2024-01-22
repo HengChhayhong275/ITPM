@@ -1,24 +1,21 @@
 <!-- eslint-disable vue/no-v-html -->
 <template>
     <div>
-        <DetailList title="Detail Attendance" :detail="attendanceDetail" link="/user-profile/attendance"
-            link-title="Attendance List" />
-    </div>
-    <!-- <div> -->
-    <!-- <div>
-            <nuxt-link to="/user-profile/attendance">
+        <div>
+            <!-- <nuxt-link to="/">Attendance List</nuxt-link> -->
+            <nuxt-link :to="link">
                 <button class="flex items-center py-4">
                     <span v-html="goBackIcon"></span>
-                    <span class="text-18 font-semiboald text-brand-500">Attendance List</span>
+                    <span class="text-18 font-semiboald text-brand-500">{{ linkTitle }}</span>
                 </button>
             </nuxt-link>
         </div>
         <div class="pb-10 bg-white rounded-24 ">
             <div class="p-4 border-b border-default text-20 text-default font-semibold flex justify-center">
-                Detail Attendance
+                {{ title }}
             </div>
             <ul class="p-4 flex flex-wrap gap-5 w-full justify-center text-16 text-default">
-                <li v-for="(value, prop) in attendanceDetail" :key="prop" class="w-[35%] flex">
+                <li v-for="(value, prop) in detail" :key="prop" class="w-[35%] flex">
                     <div class="w-[30%] font-semibold">{{ prop[0].toUpperCase() + prop.slice(1) }}</div>
                     <div :class="{ ['text-' + value.toLowerCase()]: prop.toLowerCase() === 'status' }">{{ value }}</div>
                 </li>
@@ -32,27 +29,38 @@
                 </button>
             </div>
         </div>
-    </div> -->
+    </div>
 </template>
 
 <script>
-import DetailList from '~/components/DetailList.vue';
 export default {
-    components: { DetailList },
-    data() {
-        return {
-            attendanceDetail: {
-                date: "12 12 2024",
-                subject: "LOL",
-                time: "12 AM",
-                checker: "Ezzz",
-                teacher: "Legend",
-                status: "Absent",
-                class: "2099",
-                reason: "-"
-            }
+    props: {
+        link: {
+            type: String,
+            default: null
+        }, linkTitle: {
+            type: String,
+            default: null
+        },
+        title: {
+            type: String,
+            default: null
+        }, detail: {
+            type: Object,
+            default: null
+            // {
+            // date: "12 12 2024",
+            // subject: "LOL",
+            // time: "12 AM",
+            // checker: "Ezzz",
+            // teacher: "Legend",
+            // status: "Absent",
+            // class: "2099",
+            // reason: "-"
+            // }
         }
-    }, computed: {
+    },
+    computed: {
         icons() {
             return {
                 'Download as PDF': this.screenShotIcon,

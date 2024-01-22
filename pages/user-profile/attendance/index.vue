@@ -41,7 +41,8 @@
                             :total="pageMetadata.totalItems" />
                     </span>
                 </div>
-                <AttendanceList :heads="headAttendanceTitles" :menus="attendanceMenus" class="overflow-hidden" />
+                <AttendanceList :heads="headAttendanceTitles" :menus="attendanceMenus" class="overflow-hidden"
+                    url-prefix="/user-profile/attendance/" />
                 <div class="text-18 p-4 text-default">
                     <Pagination v-model="pageMetadata.currentPage" :page-size="pageMetadata.pageSize"
                         :total="pageMetadata.totalItems" show-item-summary />
@@ -225,23 +226,23 @@ export default {
                 {
                     title: "Present",
                     value: "20/70",
-                    color: "green"
+                    color: "#07D735"
                 },
 
                 {
                     title: "Late",
                     value: "10/70",
-                    color: "yellow"
+                    color: "#FF9900"
                 },
                 {
                     title: "Absent with permission",
                     value: "10/70",
-                    color: "red"
+                    color: "#EA9999"
                 },
                 {
                     title: "Absent",
                     value: "30/70",
-                    color: "blue"
+                    color: "#CF2A27"
                 },
 
             ]

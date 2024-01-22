@@ -17,7 +17,7 @@
                         <span class="w-[63%]">From</span>
                         <span class="w-[37%]">To</span>
                     </div>
-                    <a-range-picker v-model="localValue" class="ant-date-piacker-custom" :disabled-date="true"
+                    <a-range-picker v-model="localValue" class="ant-date-piacker-custom" 
                         :format="dateFormat" @click.stop />
 
                     <button
