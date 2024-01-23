@@ -68,6 +68,7 @@ module.exports = {
         late: '#FF9900',
         permission: '#EA9999',
         absent: '#CF2A27',
+        grey: { 75: 'rgba(119, 116, 116, 0.8)' },
         brand: {
           100: '#ccdefb',
           200: '#99bdf7',
@@ -92,7 +93,7 @@ module.exports = {
         },
       },
       textColor: {
-        b75: 'rgba(0, 0, 0, 0.75)',
+        // b75: 'rgba(0, 0, 0, 0.75)',
         DEFAULT: 'rgba(0, 0, 0, 0.65)',
         default: 'rgba(0, 0, 0, 0.65)',
         secondary: 'rgba(0, 0, 0, 0.45)',

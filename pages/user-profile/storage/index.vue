@@ -13,12 +13,19 @@
                 </button>
             </li>
         </ul>
+        <FileOperationModal v-if="fileOperationModalIsOpen" />
     </div>
 </template>
 <script>
 import FileCard from '~/components/FileCard.vue'
+import FileOperationModal from '~/components/storage/FileOperationModal.vue';
 export default {
-    components: { FileCard },
+    components: { FileCard, FileOperationModal },
+    data() {
+        return {
+            fileOperationModalIsOpen: true
+        }
+    },
     computed: {
         FileList() {
             return [

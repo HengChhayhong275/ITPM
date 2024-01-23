@@ -1,7 +1,6 @@
 <template>
   <nuxt-picture
     v-if="isPicture"
-    class="h-full w-full"
     :src="src || '/discover-course.jpg'"
     :preset="preset"
     :width="width"
@@ -16,7 +15,6 @@
   />
   <nuxt-img
     v-else
-    class="h-full w-full"
     :src="src || '/discover-course.jpg'"
     :preset="preset"
     :width="width"
