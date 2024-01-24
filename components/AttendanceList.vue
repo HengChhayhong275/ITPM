@@ -6,20 +6,29 @@
                     <th v-for="(item, index) in heads" :key="index">
                         {{ item }}
                     </th>
-                    <th style="visibility: hidden;">Action</th>
+                    <th>
+                        <div style="visibility: hidden;">Action</div>
+                    </th>
                 </tr>
             </thead>
             <tbody class="text-16 text-default">
                 <tr v-for="(item, index) in menus" :key="index">
-                    <td class="w-[37%]">{{ item.subject }}</td>
-                    <td>{{ item.session }}</td>
-                    <td :class="'text-' + item.status.toLowerCase()">{{ item.status }}</td>
+                    <td v-for="(value, key) in item" :key="key"
+                        :class="{ ['text-' + value.toLowerCase()]: key.toLowerCase() === 'status' }">
+                        {{ value }}
+                    </td>
                     <td>
-                        <nuxt-link :to="urlPrefix + item.id">
-                            <button class="rounded-8 btn bg-dark-blue" style="font-size: 14px;">
-                                <div class="text-white">View Detail</div>
-                            </button>
+                        <button v-if="actionIsButton" @click="$emit('item-clicked', item)">
+                            <div :class="actionClass" style="font-size: 14px;">
+                                <div>{{ actionTitle }}</div>
+                            </div>
+                        </button>
+                        <nuxt-link v-else :to="urlPrefix + item.id">
+                            <div :class="actionClass" style="font-size: 14px;">
+                                <div>{{ actionTitle }}</div>
+                            </div>
                         </nuxt-link>
+
                     </td>
                 </tr>
             </tbody>
@@ -30,27 +39,34 @@
 <script>
 export default {
     props: {
+        // refer to header of table
         heads: {
             type: Array,
             default: null
         },
+        // refer to data of table, so it should match the number or size header
         menus: {
             type: Array,
             default: null
-        }, urlPrefix: {
+        },
+        // in senario when using such id does not work, so add entire url +id
+        urlPrefix: {
             type: String,
-            default: ''
-        }
-    },
-    data() {
-        return {
-            statusType: {
-                absent: "absent",
-                late: "late",
-                permission: "permission",
-                attend: "attend",
-            }
-        };
+            default: '/'
+        },
+        // in case, the action want it to be button click instead
+        actionIsButton: {
+            type: Boolean,
+            default: false,
+        },
+        actionClass: {
+            type: String,
+            default: "rounded-8 text-white btn bg-dark-blue"
+        },
+        actionTitle: {
+            type: String,
+            default: "View Detail"
+        },
     },
     methods: {
 

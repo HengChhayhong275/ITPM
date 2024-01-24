@@ -4,10 +4,10 @@
             <StorageSize link="view-deleted-file" />
             <FileType link="All Files" title="Type of files" :menus="fileList" />
         </div>
-        <div class="flex flex-col gap-4">
+        <div class="flex flex-col gap-4 w-full">
             <div class="flex justify-between">
                 <drive-option v-if="!$route.path.includes('/user-profile/storage/view-deleted-file')" :drives="drives" />
-                <NuxtLinkButton v-else title="Files Deleted" link="/user-profile/storage" />
+                <NuxtLinkButton v-else title="Files Deleted" link="/user-profile/storage" class="my-auto" />
                 <search-by has-filter />
             </div>
             <div class="rounded-16 bg-white">
