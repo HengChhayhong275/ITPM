@@ -1,14 +1,12 @@
 <!-- eslint-disable vue/no-v-html -->
 <template>
-    <button v-if="!isButton" class="max-w-[fit-content]">
-        <nuxt-link :to="link">
-            <div class="flex items-center">
-                <span v-if="!noIcon" v-html="icon"></span>
-                <span :class="injectClass">{{ title }}</span>
-            </div>
-        </nuxt-link>
-    </button>
-    <button v-else class="flex items-center max-w-[fit-content]">
+    <nuxt-link v-if="!isButton" class="max-w-[fit-content]" :to="link">
+        <div class="flex items-center">
+            <span v-if="!noIcon" v-html="icon"></span>
+            <span :class="injectClass">{{ title }}</span>
+        </div>
+    </nuxt-link>
+    <button v-else class="flex items-center max-w-[fit-content] p-0">
         <span v-if="!noIcon" v-html="icon"></span>
         <span :class="injectClass">{{ title }}</span>
     </button>

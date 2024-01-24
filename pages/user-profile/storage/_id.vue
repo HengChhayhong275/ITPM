@@ -4,7 +4,7 @@
             <div class="text-20 text-default font-semibold">
                 Files
             </div>
-            <button class="btn bg-brand-500 "><span class="text-white">Upload New File</span></button>
+            <button class="btn bg-brand-500 "><span class="text-white">Upload New file or folder</span></button>
         </div>
         <ul class="flex gap-4 flex-wrap p-4">
             <li v-for="(item, index) in FileList" :key="index">

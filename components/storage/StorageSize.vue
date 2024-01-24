@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="flex justify-end">
-            <ButtonORNuxtLink :title="linkTitle" is-button no-icon inject-class="text-14 text-brand-500" />
+            <ButtonORNuxtLink :title="linkTitle" :link="link" no-icon inject-class="text-14 text-brand-500" />
         </div>
     </div>
 </template>
@@ -36,6 +36,10 @@ export default {
         linkTitle: {
             type: String,
             default: "Files Deleted",
+        },
+        link: {
+            type: String,
+            default: null,
         },
     },
     computed: {

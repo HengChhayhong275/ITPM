@@ -55,6 +55,7 @@
   --tw-border-opacity: 0.9;
   --tw-bg-opacity: 0.9;
 }
+
 .btn:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
