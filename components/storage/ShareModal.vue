@@ -6,21 +6,21 @@
                 <OwnerProfile :user="user" class="w-[30rem]" />
             </li>
             <li class="py-2">
-                <ShareCard v-model="selectedPeople" :people="people" />
+                <SelectToShare v-model="selectedPeople" :people="people" />
             </li>
             <li class="flex justify-end gap-4">
-                <button class="btn border-brand-500"><span class="text-brand-500">Cancel</span></button>
-                <button class="btn bg-brand-500 "><span class="text-white">Share</span></button>
+                <button class="btn border-brand-500" @click="$emit('cancel')"><span class="text-brand-500">Cancel</span></button>
+                <button class="btn bg-brand-500 " @click="$emit('done')"><span class="text-white">Share</span></button>
             </li>
         </ul>
     </div>
 </template>
 
 <script>
+import SelectToShare from './SelectToShare.vue';
 import OwnerProfile from '~/components/storage/OwnerProfile.vue';
-import ShareCard from '~/components/storage/ShareCard.vue';
 export default {
-    components: { OwnerProfile, ShareCard },
+    components: { OwnerProfile, SelectToShare },
     data() {
         return {
             selectedPeople: undefined,

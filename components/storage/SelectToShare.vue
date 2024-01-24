@@ -1,12 +1,12 @@
 <template>
     <div class="share-card-component">
-        <a-space direction="vertical" class="w-full">
-            <a-select v-model="localValue" class="w-full" :options="people" mode="multiple"
-                :placeholder="placeholder"></a-select>
-        </a-space>
+      <a-space direction="vertical" class="w-full">
+        <a-select v-model="localValue" class="w-full" :options="people" mode="multiple" :placeholder="placeholder">
+        </a-select>
+      </a-space>
     </div>
-</template>
-
+  </template>
+  
 <script>
 export default {
     props: {
