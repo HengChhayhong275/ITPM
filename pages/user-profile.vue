@@ -13,7 +13,7 @@
         </li>
       </ul> -->
       <div class="min-h-[10rem]">
-        <nuxt />
+        <Nuxt />
       </div>
     </div>
   </template>

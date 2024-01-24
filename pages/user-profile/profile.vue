@@ -14,7 +14,7 @@
                 </ul>
           </a-card>
         </Section>
-        <Section class="grow pl-7 w-11/12">
+        <Section class="grow pl-5 w-11/12">
           <Nuxt />
         </Section>
     </div>
