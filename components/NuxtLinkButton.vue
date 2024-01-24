@@ -1,15 +1,11 @@
 <!-- eslint-disable vue/no-v-html -->
 <template>
-    <nuxt-link v-if="!isButton" class="max-w-[fit-content]" :to="link">
+    <nuxt-link class="max-w-[fit-content]" :to="link">
         <div class="flex items-center">
             <span v-if="!noIcon" v-html="icon"></span>
             <span :class="injectClass">{{ title }}</span>
         </div>
     </nuxt-link>
-    <button v-else class="flex items-center max-w-[fit-content] p-0">
-        <span v-if="!noIcon" v-html="icon"></span>
-        <span :class="injectClass">{{ title }}</span>
-    </button>
 </template>
 <script>
 export default {
@@ -17,10 +13,6 @@ export default {
         injectClass: {
             type: String,
             default: "text-18 font-semibold text-brand-500"
-        },
-        isButton: {
-            type: Boolean,
-            default: false
         },
         link: {
             type: String,

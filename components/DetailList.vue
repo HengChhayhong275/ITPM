@@ -1,15 +1,8 @@
 <!-- eslint-disable vue/no-v-html -->
 <template>
     <div>
-            <!-- <nuxt-link to="/">Attendance List</nuxt-link> -->
-            <!-- <nuxt-link :to="link">
-                <button class="flex items-center py-4">
-                    <span v-html="goBackIcon"></span>
-                    <span class="text-18 font-semiboald text-brand-500">{{ linkTitle }}</span>
-                </button>
-            </nuxt-link> -->
-            <ButtonORNuxtLink :link="link" :title="linkTitle" class="pb-4"/>
-        <div class="pb-10 bg-white rounded-24 ">
+        <NuxtLinkButton :link="link" :title="linkTitle"/>
+        <div class="mt-4 bg-white rounded-24 ">
             <div class="p-4 border-b border-default text-20 text-default font-semibold flex justify-center">
                 {{ title }}
             </div>
@@ -32,9 +25,9 @@
 </template>
 
 <script>
-import ButtonORNuxtLink from '~/components/ButtonORNuxtLink.vue';
+import NuxtLinkButton from '~/components/NuxtLinkButton.vue';
 export default {
-    components: { ButtonORNuxtLink },
+    components: { NuxtLinkButton },
     props: {
         link: {
             type: String,

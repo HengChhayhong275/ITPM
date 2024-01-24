@@ -11,15 +11,15 @@
             </div>
         </div>
         <div class="flex justify-end">
-            <ButtonORNuxtLink :title="linkTitle" :link="link" no-icon inject-class="text-14 text-brand-500" />
+            <NuxtLinkButton :title="linkTitle" :link="link" no-icon inject-class="text-14 text-brand-500" />
         </div>
     </div>
 </template>
   
 <script>
-import ButtonORNuxtLink from '~/components/ButtonORNuxtLink.vue';
+import NuxtLinkButton from '~/components/NuxtLinkButton.vue';
 export default {
-    components: { ButtonORNuxtLink },
+    components: { NuxtLinkButton },
     props: {
         totalSize: {
             type: Number,

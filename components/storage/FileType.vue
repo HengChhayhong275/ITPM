@@ -2,10 +2,10 @@
     <div class="p-4 rounded-8 bg-white flex flex-col gap-4">
         <div class="text-16 font-semibold flex justify-between">
             <span class="text-default">{{ title }}</span>
-            <!-- <button class="flex justify-end">
+            <button class="flex justify-end">
                 <div class="font-semibold text-brand-500">{{ link }}</div>
-            </button> -->
-            <ButtonORNuxtLink is-button no-icon :title="link" inject-class="font-semibold text-brand-500" />
+            </button>
+            <!-- <ButtonORNuxtLink is-button no-icon :title="link" inject-class="font-semibold text-brand-500" /> -->
         </div>
         <ul class="flex flex-col gap-4">
             <li v-for="(item, index) in menus" :key="index"
@@ -27,9 +27,7 @@
 </template>
 
 <script>
-import ButtonORNuxtLink from '../ButtonORNuxtLink.vue';
 export default {
-    components: { ButtonORNuxtLink },
     props: {
         sizeType: {
             type: String,

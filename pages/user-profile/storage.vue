@@ -7,7 +7,7 @@
         <div class="flex flex-col gap-4">
             <div class="flex justify-between">
                 <drive-option v-if="!$route.path.includes('/user-profile/storage/view-deleted-file')" :drives="drives" />
-                <ButtonORNuxtLinkVue v-else title="Files Deleted" link="/user-profile/storage" />
+                <NuxtLinkButton v-else title="Files Deleted" link="/user-profile/storage" />
                 <search-by has-filter />
             </div>
             <div class="rounded-16 bg-white">
@@ -17,13 +17,13 @@
     </div>
 </template>
 <script>
-import ButtonORNuxtLinkVue from '~/components/ButtonORNuxtLink.vue'
+import NuxtLinkButton from '~/components/NuxtLinkButton.vue'
 import DriveOption from '~/components/storage/DriveOption.vue'
 import FileType from '~/components/storage/FileType.vue'
 import SearchBy from '~/components/storage/SearchBy.vue'
 import StorageSize from '~/components/storage/StorageSize.vue'
 export default {
-    components: { ButtonORNuxtLinkVue, DriveOption, FileType, SearchBy, StorageSize },
+    components: { NuxtLinkButton, DriveOption, FileType, SearchBy, StorageSize },
     computed: {
         drives() {
             return [
