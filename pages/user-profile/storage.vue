@@ -8,7 +8,7 @@
             <div class="flex justify-between">
                 <drive-option v-if="!$route.path.includes('/user-profile/storage/view-deleted-file')" :drives="drives" />
                 <NuxtLinkButton v-else title="Files Deleted" link="/user-profile/storage" class="my-auto" />
-                <search-by has-filter />
+                <search-by v-model="searchValue" has-filter />
             </div>
             <div class="rounded-16 bg-white">
                 <nuxt />
@@ -24,6 +24,11 @@ import SearchBy from '~/components/storage/SearchBy.vue'
 import StorageSize from '~/components/storage/StorageSize.vue'
 export default {
     components: { NuxtLinkButton, DriveOption, FileType, SearchBy, StorageSize },
+    data() {
+        return {
+            searchValue: ''
+        }
+    },
     computed: {
         drives() {
             return [
@@ -43,52 +48,40 @@ export default {
         },
         fileList() {
             return [
+                // this is not intentional to be used, as testing only especailly the img url,
                 {
-                    title: 'Documents',
-                    img: "~/assets/img/logos/FinancePartner/Amk-logo.jpg",
-                    usedSize: '0.5'
+                    title: 'Photos & Images',
+                    img: "https://drive-thirdparty.googleusercontent.com/32/type/image/jpeg",
+                    usedSize: '0.7'
                 },
                 {
                     title: 'Documents',
-                    img: '~/assets/img/logos/FinancePartner/Amk-logo.jpg',
-                    usedSize: '0.5'
+                    img: "https://drive-thirdparty.googleusercontent.com/32/type/application/vnd.google-apps.document",
+                    usedSize: '0.7'
                 },
                 {
-                    title: 'Documents',
-                    img: '~/assets/img/logos/FinancePartner/Amk-logo.jpg',
-                    usedSize: '0.5'
+                    title: 'PDF',
+                    img: "https://drive-thirdparty.googleusercontent.com/32/type/application/pdf",
+                    usedSize: '0.7'
                 },
                 {
-                    title: 'Documents',
-                    img: '~/assets/img/logos/FinancePartner/Amk-logo.jpg',
-                    usedSize: '0.5'
+                    title: 'Spread Sheet',
+                    img: "https://drive-thirdparty.googleusercontent.com/32/type/application/vnd.google-apps.spreadsheet",
+                    usedSize: '0.3'
                 },
                 {
-                    title: 'Documents',
-                    img: '~/assets/img/logos/FinancePartner/Amk-logo.jpg',
-                    usedSize: '0.5'
+                    title: 'Presentation',
+                    img: 'https://ssl.gstatic.com/docs/doclist/images/mediatype/icon_1_presentation_x32.png',
+                    usedSize: '0.2'
                 },
+                {
+                    title: 'Form',
+                    img: 'https://ssl.gstatic.com/docs/doclist/images/mediatype/icon_2_form_x32.png',
+                    usedSize: '0.2'
+                },
+
             ]
         }
     }
 }
-
 </script>
-
-<style scoped>
-.red {
-    background-color: red;
-}
-
-.blue {
-    background-color: blue;
-}
-
-.green {
-    background-color: green;
-}
-
-.pink {
-    background-color: pink;
-}
-</style>

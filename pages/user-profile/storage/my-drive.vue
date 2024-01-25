@@ -2,7 +2,7 @@
     <div>
         <div class="p-4 flex justify-between items-center border-b border-default">
             <div class="text-20 text-default font-semibold">
-                Files
+                Files {{ "->>>> this is " + $route.path }}
             </div>
             <button class="btn bg-brand-500 "><span class="text-white">Upload New file or folder</span></button>
         </div>
@@ -104,6 +104,8 @@ export default {
                 },
             ]
         }
+    },mounted(){
+
     }
 }
 </script>

@@ -10,10 +10,8 @@
         <ul class="flex flex-col gap-4">
             <li v-for="(item, index) in menus" :key="index"
                 class="p-3 flex rounded-8 border border-default items-center justify-between">
-                <div class="flex gap-3">
-                    <span>
-                        <img class="h-[20px] w-[20px]" :src="item.img">
-                    </span>
+                <div class="flex gap-3 items-center">
+                    <LazyImage :src="item.img" class="h-[20px] w-[20px]" />
                     <span class="text-16 text-default">
                         {{ item.title }}
                     </span>
@@ -27,7 +25,9 @@
 </template>
 
 <script>
+import LazyImage from '../LazyImage.vue';
 export default {
+    components: { LazyImage },
     props: {
         sizeType: {
             type: String,
