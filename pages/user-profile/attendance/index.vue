@@ -165,31 +165,76 @@ export default {
             return {
                 byAttendance: [
                     {
-                        title: "Option1",
+                        title: "All Attendances",
                         value: false
                     },
                     {
-                        title: "Option1",
+                        title: "Present",
                         value: false
-                    }
+                    },
+                    {
+                        title: "Late",
+                        value: false
+                    },
+                    {
+                        title: "Absent with Permission",
+                        value: false
+                    },
+                    {
+                        title: "Absent",
+                        value: false
+                    },
                 ],
                 bySubject: [
                     {
-                        title: "Option1",
+                        title: "All Subject",
                         value: false
                     },
                     {
-                        title: "Option1",
+                        title: "Fundament of Accounting",
+                        value: false
+                    },
+                    {
+                        title: "Art",
+                        value: false
+                    },
+                    {
+                        title: "Mathematic",
+                        value: false
+                    },
+                    {
+                        title: "English Language",
+                        value: false
+                    },
+                    {
+                        title: "Computer Science Teacher",
                         value: false
                     }
+
                 ],
                 byTeacher: [
                     {
-                        title: "Option1",
+                        title: "All Teacher",
                         value: false
                     },
                     {
-                        title: "Option1",
+                        title: "Fundament of Accounting",
+                        value: false
+                    },
+                    {
+                        title: "Art Teacher",
+                        value: false
+                    },
+                    {
+                        title: "Mathematic Teacher",
+                        value: false
+                    },
+                    {
+                        title: "English Teacher",
+                        value: false
+                    },
+                    {
+                        title: "Computer Science Teacher",
                         value: false
                     }
                 ],
