@@ -100,6 +100,8 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a slight shadow on hover */
 }
 
+
+
 div {
     color: white !important;
 }
