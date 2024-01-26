@@ -1,5 +1,12 @@
 <template>
     <div>
-        This is the login page
+      <h1>This is the independent login page</h1>
     </div>
-</template>
+  </template>
+  
+  <script>
+  export default {
+    layout: false,
+  };
+  </script>
+  
