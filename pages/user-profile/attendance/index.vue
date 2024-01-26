@@ -143,7 +143,6 @@ export default {
                     session: "12 12 2014",
                     status: "absent",
                     id: "234562"
-
                 },
             ]
         }
@@ -196,31 +195,7 @@ export default {
                 ],
             }
         },
-        // dateList() {
-        //     return [
-        //         {
-        //             value: {
-        //                 startDate: "10.10.2023",
-        //                 endDate: "13.01.2024"
-        //             },
-        //             title: "Today",
-        //         },
-        //         {
-        //             value: {
-        //                 startDate: "10.10.2023",
-        //                 endDate: "13.01.2024"
-        //             },
-        //             title: "Today",
-        //         },
-        //         {
-        //             value: {
-        //                 startDate: "10.10.2023",
-        //                 endDate: "13.01.2024"
-        //             },
-        //             title: "Today",
-        //         },
-        //     ]
-        // },
+        
         summaryMenus() {
             return [
                 {
@@ -256,11 +231,8 @@ export default {
     },
     methods: {
 
-        //     handleClick: MenuProps['onClick'] = e => {
-        //     // console.log('click', e);
-        // }, 
+        
     },
-    // watch: {
-    // }
-}
+    
+}    
 </script>

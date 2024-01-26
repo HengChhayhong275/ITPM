@@ -231,6 +231,14 @@ export default{
 .update-btn:hover{
     color: #2563eb;
     background-color: white;
-
+}
+div{
+    font-size: 18px;
+}
+select option {
+  background-color: white; /* Sets the background color to white */
+}
+select option[value="computer_science"] {
+  background-color: #f0f0f0; /* Light gray background for Computer Science option */
 }
 </style>

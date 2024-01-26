@@ -1,8 +1,8 @@
 <!-- eslint-disable vue/no-v-html -->
 <template>
     <div>
-        <DetailList title="Detail Attendance" :detail="attendanceDetail" link="/user-profile/attendance"
-            link-title="Attendance List" />
+        <DetailList title="School Fee" :detail="schoolFee" link="/user-profile/fee"
+            link-title="My Transaction" />
     </div>
 </template>
 
@@ -12,15 +12,15 @@ export default {
     components: { DetailList },
     data() {
         return {
-            attendanceDetail: {
-                date: "12 12 2024",
-                subject: "LOL",
-                time: "12 AM",
-                checker: "Ezzz",
-                teacher: "Legend",
-                status: "Absent",
-                class: "2099",
-                reason: "Sick"
+            schoolFee: {
+                "payment ID": "#2019",
+                "Payment Date": "1-1-2011",
+                "Payment Method": "ABA",
+                "Transaction ID": "168",
+                Amount: "$20",
+                Payer: "Handsome boy",
+                Status: "Paid",
+                "-": ""
             }
         }
     }, computed: {
