@@ -1,11 +1,14 @@
+<!-- eslint-disable import/no-named-as-default -->
+<!-- eslint-disable no-console -->
 <!-- eslint-disable no-console -->
 <!-- eslint-disable no-undef -->
 <!-- eslint-disable vue/no-v-html -->
 <template>
     <div>
-        <NuxtLinkButton :link="link" :title="linkTitle"/>
-        <div class="mt-4 bg-white rounded-24 ">
-            <div class="p-4 border-b border-default text-20 text-default font-semibold flex justify-center">
+            <NuxtLinkButton :link="link" :title="linkTitle" class="pb-4"/>
+        <div class="pb-10 bg-white rounded-24 ">
+            <div ref="pdfContent">
+                <div class="p-4 border-b border-default text-20 text-default font-semibold flex justify-center">
                 {{ title }}
             </div>
             <ul class="p-4 flex flex-wrap gap-5 w-full justify-center text-16 text-default">
@@ -30,6 +33,7 @@
                 </button>
             </div>
         </div>
+    </div>
 </template>
 
 <script>
