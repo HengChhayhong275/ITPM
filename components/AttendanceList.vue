@@ -28,7 +28,6 @@
                                 <div>{{ actionTitle }}</div>
                             </div>
                         </nuxt-link>
-
                     </td>
                 </tr>
             </tbody>

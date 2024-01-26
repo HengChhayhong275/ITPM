@@ -11,3 +11,6 @@ export default function ({ app, redirect, $auth, route }) {
     return redirect(app.localePath(REDIRECT_URL))
   }
 }
+
+
+

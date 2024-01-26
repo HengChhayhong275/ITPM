@@ -35,3 +35,5 @@ export default {
   },
   plugins: [{ src: '~/plugins/axios.js', ssr: true }, '~/plugins/auth.js'],
 }
+
+

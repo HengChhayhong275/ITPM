@@ -1,12 +1,16 @@
+<!-- pages/login.vue -->
 <template>
-    <div>
-      <h1>This is the independent login page</h1>
-    </div>
-  </template>
-  
-  <script>
-  export default {
-    layout: false,
-  };
-  </script>
-  
+  <div>
+    <!-- Your login page content -->
+    ertyujnbbvt7ujhgyujbvgyuvgybgyuhvgyhvghfgtyhvg
+  </div>
+</template>
+
+<script>
+export default {
+   asyncData({ app }) {
+    // Redirect to Keycloak login
+    app.$auth.loginWith('keycloak');
+  },
+};
+</script>
