@@ -7,7 +7,7 @@
                       <nuxt-link :to="item.path" :class="{ 'profile-menu-active': $route.path.includes(item.path) }">
                         <div class="flex text-center items-center">
                             <span class="mr-3" v-html="item.icon"></span>
-                            <div class="text-color-grey pt-1">{{ item.title }}</div>
+                            <div class="text-color-grey pt-1 text-18">{{ item.title }}</div>
                         </div>
                       </nuxt-link>
                     </li>

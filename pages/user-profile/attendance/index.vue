@@ -143,7 +143,6 @@ export default {
                     session: "12 12 2014",
                     status: "absent",
                     id: "234562"
-
                 },
             ]
         }
@@ -166,61 +165,82 @@ export default {
             return {
                 byAttendance: [
                     {
-                        title: "Option1",
+                        title: "All Attendances",
                         value: false
                     },
                     {
-                        title: "Option1",
+                        title: "Present",
                         value: false
-                    }
+                    },
+                    {
+                        title: "Late",
+                        value: false
+                    },
+                    {
+                        title: "Absent with Permission",
+                        value: false
+                    },
+                    {
+                        title: "Absent",
+                        value: false
+                    },
                 ],
                 bySubject: [
                     {
-                        title: "Option1",
+                        title: "All Subject",
                         value: false
                     },
                     {
-                        title: "Option1",
+                        title: "Fundament of Accounting",
+                        value: false
+                    },
+                    {
+                        title: "Art",
+                        value: false
+                    },
+                    {
+                        title: "Mathematic",
+                        value: false
+                    },
+                    {
+                        title: "English Language",
+                        value: false
+                    },
+                    {
+                        title: "Computer Science Teacher",
                         value: false
                     }
+
                 ],
                 byTeacher: [
                     {
-                        title: "Option1",
+                        title: "All Teacher",
                         value: false
                     },
                     {
-                        title: "Option1",
+                        title: "Fundament of Accounting",
+                        value: false
+                    },
+                    {
+                        title: "Art Teacher",
+                        value: false
+                    },
+                    {
+                        title: "Mathematic Teacher",
+                        value: false
+                    },
+                    {
+                        title: "English Teacher",
+                        value: false
+                    },
+                    {
+                        title: "Computer Science Teacher",
                         value: false
                     }
                 ],
             }
         },
-        // dateList() {
-        //     return [
-        //         {
-        //             value: {
-        //                 startDate: "10.10.2023",
-        //                 endDate: "13.01.2024"
-        //             },
-        //             title: "Today",
-        //         },
-        //         {
-        //             value: {
-        //                 startDate: "10.10.2023",
-        //                 endDate: "13.01.2024"
-        //             },
-        //             title: "Today",
-        //         },
-        //         {
-        //             value: {
-        //                 startDate: "10.10.2023",
-        //                 endDate: "13.01.2024"
-        //             },
-        //             title: "Today",
-        //         },
-        //     ]
-        // },
+        
         summaryMenus() {
             return [
                 {
@@ -256,11 +276,8 @@ export default {
     },
     methods: {
 
-        //     handleClick: MenuProps['onClick'] = e => {
-        //     // console.log('click', e);
-        // }, 
+        
     },
-    // watch: {
-    // }
-}
+    
+}    
 </script>

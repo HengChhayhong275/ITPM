@@ -4590,3 +4590,6 @@
   --tw-text-opacity: 1;
   color: rgba(145, 199, 20, var(--tw-text-opacity));
 }
+h1{
+  font-size: 22px;
+}

@@ -1,3 +1,5 @@
+<!-- eslint-disable no-console -->
+<!-- eslint-disable no-undef -->
 <!-- eslint-disable vue/no-v-html -->
 <template>
     <div>
@@ -8,24 +10,33 @@
             </div>
             <ul class="p-4 flex flex-wrap gap-5 w-full justify-center text-16 text-default">
                 <li v-for="(value, prop) in detail" :key="prop" class="w-[35%] flex">
-                    <div class="w-[30%] font-semibold">{{ prop[0].toUpperCase() + prop.slice(1) }}</div>
-                    <div :class="{ ['text-' + value.toLowerCase()]: prop.toLowerCase() === 'status' }">{{ value }}</div>
+                    <div class="w-[50%] font-semibold">{{ prop[0].toUpperCase() + prop.slice(1) }}</div>
+                    <div class="w-[50%]" :class="{ ['text-' + value.toLowerCase()]: prop.toLowerCase() === 'status' }">{{ value }}</div>
                 </li>
             </ul>
+            </div>
             <div class="flex justify-center gap-12 mt-10 text-brand-500  text-16 font-semibold">
-                <button v-for="(value, prop) in icons" :key="prop"
-                    class="flex flex-col gap-3  justify-center  items-center hover:text-default">
-                    <div class="border-[.5rem] bg-blue-100 border-blue-100 rounded-[1000px] text-[5rem] " v-html="value">
+                <button class="flex flex-col gap-3  justify-center  items-center hover:text-default"
+                    @click="downloadAsPDF">
+                    <div class="border-[.5rem] bg-blue-100 border-blue-100 rounded-[1000px] text-[5rem] " v-html="documentDownloadIcon">
                     </div>
-                    <div>{{ prop }}</div>
+                    download
+                </button>
+                <button class="flex flex-col gap-3  justify-center  items-center hover:text-default"
+                    @click="takeScreenshot">
+                    <div class="border-[.5rem] bg-blue-100 border-blue-100 rounded-[1000px] text-[5rem] " v-html="screenShotIcon">
+                    </div>
+                    Screenshot
                 </button>
             </div>
         </div>
-    </div>
 </template>
 
 <script>
-import NuxtLinkButton from '~/components/NuxtLinkButton.vue';
+import jsPDF from 'jspdf';
+import html2pdf from 'html2pdf.js';
+import html2canvas from 'html2canvas';
+import NuxtLinkButton from './NuxtLinkButton.vue';
 export default {
     components: { NuxtLinkButton },
     props: {
@@ -42,16 +53,7 @@ export default {
         }, detail: {
             type: Object,
             default: null
-            // {
-            // date: "12 12 2024",
-            // subject: "LOL",
-            // time: "12 AM",
-            // checker: "Ezzz",
-            // teacher: "Legend",
-            // status: "Absent",
-            // class: "2099",
-            // reason: "-"
-            // }
+            
         }
     },
     computed: {
@@ -72,8 +74,66 @@ export default {
         }
     },
     methods: {
+        async downloadAsPDF() {
+            try {
+    const content = this.$refs.pdfContent;
+    
+    // Create a new jsPDF instance
+    // eslint-disable-next-line new-cap
+    const pdf = new jsPDF('p', 'mm', 'a4');
 
-    }
+    // Use html2canvas to capture the content as an image
+    const canvas = await html2pdf(content, { scale: 2 });
+
+    // Convert the canvas image to a data URL
+    const imageData = canvas.toDataURL('image/jpeg', 1.0);
+
+    // Add the image to the PDF
+    pdf.addImage(imageData, 'JPEG', 0, 0, 210, 297); // Adjust dimensions as needed
+
+    // Save or open the PDF
+    pdf.save('document.pdf'); // Save the PDF with a specific filename
+
+  } catch (error) {
+    console.error('Error generating PDF:', error);
+  }
+    },
+
+    async takeScreenshot() {
+        try {
+    const content = this.$refs.pdfContent;
+
+    // Capture the content as a canvas
+    const canvas = await html2canvas(content);
+
+    // Convert the canvas to a data URL
+    const screenshotDataURL = canvas.toDataURL('image/png');
+
+    // Create a Blob from the data URL
+    const blob = await (await fetch(screenshotDataURL)).blob();
+
+    // Create a download link
+    const link = document.createElement('a');
+    link.href = window.URL.createObjectURL(blob);
+
+    // Set the file name (you can customize the file name here)
+    const fileName = 'screenshot.png';
+    link.download = fileName;
+
+    // Append the link to the document and trigger a click to download
+    document.body.appendChild(link);
+    link.click();
+
+    // Clean up: remove the link from the document
+    document.body.removeChild(link);
+
+  } catch (error) {
+    console.error('Error taking screenshot:', error);
+  }
+    },
+  },
+  
+    
 };
 </script>
 <style scoped>

@@ -56,4 +56,3 @@ import UserProfileInfo from "~/components/UserProfileInfo.vue"
     }
   }
   </script>
-  

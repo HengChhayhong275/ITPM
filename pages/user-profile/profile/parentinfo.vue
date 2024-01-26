@@ -305,6 +305,8 @@ export default{
 .update-btn:hover{
     color: #2563eb;
     background-color: white;
-
+}
+div{
+    font-size: 18px;
 }
 </style>

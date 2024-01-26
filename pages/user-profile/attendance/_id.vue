@@ -20,7 +20,7 @@ export default {
                 teacher: "Legend",
                 status: "Absent",
                 class: "2099",
-                reason: "-"
+                reason: "Sick"
             }
         }
     }, computed: {
