@@ -1,0 +1,11 @@
+https://signin.sala.tech/auth/realms/sandbox/protocol/openid-connect/auth
+?protocol=oauth2
+&response_type=code&access_type
+&client_id=testC
+&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F
+&scope=openid
+%20profile
+%20email&state=RBsXbrwKQj&code_challenge_method=S256
+&code_challenge=DJ0M0VrMaSyWK4csqhhG69Gd6yuUUgUfFKuQXcvxAgE
+
+http://localhost:8080/auth/realms/myrealm/protocol/openid-connect/auth?protocol=oauth2&response_type=code&access_type&client_id=myclient&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F

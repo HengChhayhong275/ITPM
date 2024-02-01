@@ -28,7 +28,7 @@ export default {
   },
   resetOnError: true,
   redirect: {
-    login: '/login',
+    login: '/',
     logout: '/',
     home: false,
     callback: '/',
