@@ -3,8 +3,8 @@ export default {
     keycloak: {
       scheme: 'oauth2',
       endpoints: {
-        authorization: `${process.env.KEYCLOAK_REMOTE_HOST}/auth/realms/${process.env.KEYCLOAK_REALM}/protocol/openid-connect/auth`,
-        token: `${process.env.KEYCLOAK_REMOTE_HOST}/auth/realms/${process.env.KEYCLOAK_REALM}/protocol/openid-connect/token`,
+        authorization: `${process.env.KEYCLOAK_REMOTE_HOST}/realms/${process.env.KEYCLOAK_REALM}/protocol/openid-connect/auth`,
+        token: `${process.env.KEYCLOAK_REMOTE_HOST}/realms/${process.env.KEYCLOAK_REALM}/protocol/openid-connect/token`,
         logout:
           `${process.env.KEYCLOAK_REMOTE_HOST}/auth/realms/${process.env.KEYCLOAK_REALM}/protocol/openid-connect/logout?redirect_uri=` +
           encodeURIComponent(String(process.env.REMOTE_API)),
@@ -28,7 +28,7 @@ export default {
   },
   resetOnError: true,
   redirect: {
-    login: '/',
+    login: '/user-profile',
     logout: '/',
     home: false,
     callback: '/',

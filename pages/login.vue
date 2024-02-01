@@ -1,18 +1,21 @@
 <!-- pages/login.vue -->
 <template>
-  <test>
+  <!-- <test>
     <h1>hell</h1>
 
-  </test>
+  </test> -->
+  <div>
+    login with keyloak
+  </div>
 </template>
   
 <script>
-import test from '../layouts/testlayout.vue';
+// import test from '../layouts/testlayout.vue';
 
 export default {
-  components: {
-    test,
-  },
+  // components: {
+  //   test,
+  // },
   layout: 'testlayout'
   , asyncData({ app }) {
     // Redirect to Keycloak login
