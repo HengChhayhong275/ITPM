@@ -1,3 +1,4 @@
+<!-- eslint-disable no-console -->
 <template>
     <div class="flex flex-col gap-4">
         <!-- <span v-for="(item, index) in selectedOptions" :key="index"> {{ item.title + " : : " + item.value }}</span> -->
@@ -59,6 +60,7 @@ import ViewRows from "~/components/ViewRows.vue";
 import FilterCheckBox from "~/components/FilterCheckBox.vue"
 import AttendanceList from "~/components/AttendanceList.vue"
 import Pagination from "~/components/Pagination.vue"
+import apis from "~/apis/index.js";
 export default {
     components: { attendanceSummary, DateRangeSelection, ViewRows, FilterCheckBox, AttendanceList, Pagination },
     data() {
@@ -147,7 +149,6 @@ export default {
             ]
         }
     },
-
     computed: {
         headAttendanceTitles() {
             return [
@@ -240,7 +241,7 @@ export default {
                 ],
             }
         },
-        
+
         summaryMenus() {
             return [
                 {
@@ -269,15 +270,21 @@ export default {
         },
 
     },
-    mounted() {
+   async mounted() {
         // Set the default value for selectRowValue based on rowOptions
         this.selectedRowValue = this.rowOptions[0].value;
         this.selectedOptions = this.filterOptions;
+        await this.getAllAttendances()
     },
     methods: {
+        async getAllAttendances() {
+            console.log("attendanceceeece");
+            const lo = await apis.backend.getAttendances(this.$axios, 1, 10)
+            console.log(lo.data);
+            console.log(lo.data.data);
+        }
 
-        
     },
-    
+
 }    
 </script>
