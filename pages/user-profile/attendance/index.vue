@@ -1,3 +1,4 @@
+<!-- eslint-disable no-console -->
 <template>
     <div class="flex flex-col gap-4">
         <!-- <span v-for="(item, index) in selectedOptions" :key="index"> {{ item.title + " : : " + item.value }}</span> -->
@@ -42,7 +43,7 @@
                     </span>
                 </div>
                 <AttendanceList :heads="headAttendanceTitles" :menus="attendanceMenus" class="overflow-hidden"
-                    url-prefix="/user-profile/attendance/" />
+                    :props-to-render="propsToRender" url-prefix="/user-profile/attendance/" />
                 <div class="text-18 p-4 text-default">
                     <Pagination v-model="pageMetadata.currentPage" :page-size="pageMetadata.pageSize"
                         :total="pageMetadata.totalItems" show-item-summary />
@@ -59,6 +60,7 @@ import ViewRows from "~/components/ViewRows.vue";
 import FilterCheckBox from "~/components/FilterCheckBox.vue"
 import AttendanceList from "~/components/AttendanceList.vue"
 import Pagination from "~/components/Pagination.vue"
+import apis from "~/apis/index";
 export default {
     components: { attendanceSummary, DateRangeSelection, ViewRows, FilterCheckBox, AttendanceList, Pagination },
     data() {
@@ -77,78 +79,23 @@ export default {
             },
             attendanceMenus: [
                 {
-                    subject: "STweerferferferferferferferferferH",
+                    subject: "N/A",
                     session: "7:00 - 9:00, Jan 10, 2022",
-                    status: "late",
-                    id: "234562"
-                },
-                {
-                    subject: "STH",
-                    session: "12 12 2014",
-                    status: "attend",
-                    id: "234562"
-
-                },
-                {
-                    subject: "STH",
-                    session: "12 12 2014",
-                    status: "permission",
-                    id: "234562"
-
-                },
-                {
-                    subject: "STH",
-                    session: "12 12 2014",
-                    status: "absent",
-                    id: "234562"
-
-                },
-                {
-                    subject: "STweerferferferferferferferferferH",
-                    session: "7:00 - 9:00, Jan 10, 2022",
-                    status: "late",
-                    id: "234562"
-
-                },
-                {
-                    subject: "STH",
-                    session: "12 12 2014",
-                    status: "attend",
-                    id: "234562"
-
-                },
-                {
-                    subject: "STH",
-                    session: "12 12 2014",
-                    status: "permission",
-                    id: "234562"
-
-                },
-                {
-                    subject: "STH",
-                    session: "12 12 2014",
-                    status: "absent",
-                    id: "234562"
-
-                },
-                {
-                    subject: "STH",
-                    session: "12 12 2014",
-                    status: "permission",
-                    id: "234562"
-
-                },
-                {
-                    subject: "STH",
-                    session: "12 12 2014",
-                    status: "absent",
-                    id: "234562"
-                },
+                    status: "present",
+                    id: "1"
+                }
             ]
         }
     },
 
     computed: {
+        propsToRender() {
+            return [
+                'subject',
+                'session_at',
+                'status'
+            ]
+        },
         headAttendanceTitles() {
             return [
                 "Subject",
@@ -240,7 +187,7 @@ export default {
                 ],
             }
         },
-        
+
         summaryMenus() {
             return [
                 {
@@ -268,16 +215,29 @@ export default {
             ]
         },
 
+    }, watch: {
+        selectedRowValue(newVal) {
+            this.pageMetadata.pageSize = newVal
+        }
     },
-    mounted() {
+    async mounted() {
         // Set the default value for selectRowValue based on rowOptions
         this.selectedRowValue = this.rowOptions[0].value;
         this.selectedOptions = this.filterOptions;
+        await this.getAllAttendance()
     },
     methods: {
+        async getAllAttendance() {
+            const res = await apis.backend.getAttendances(this.$axios, 1, 10);
+            const data = res.data;
+            this.attendanceMenus = data
+            // data.forEach(element => {
+            //     delete element.
+            // });
+        }
 
-        
+
     },
-    
+
 }    
 </script>

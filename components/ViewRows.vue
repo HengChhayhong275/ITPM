@@ -72,8 +72,8 @@ export default {
   width: 100% !important;
   font-size: 18px !important;
   padding-left: 1rem !important;
-  padding-top: .5rem !important;
-  padding-bottom: .5rem !important;
+  padding-top: .7rem !important;
+  padding-bottom: .7rem !important;
   display: flex !important;
   align-items: center !important;
   font-weight: 500 !important;

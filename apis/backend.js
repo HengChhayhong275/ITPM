@@ -9,7 +9,7 @@ export default {
   },
   async getAttendances(axios, page, pageSize) {
     const res = await axios.get(
-      `${API_BACKEND}/attedances?page=${page}&pageSize=${pageSize}`
+      `http://localhost:3001/attendances?page=${page}&pageSize=${pageSize}`
     )
     return res.data
   },

@@ -11,7 +11,28 @@
                     </th>
                 </tr>
             </thead>
-            <tbody class="text-16 text-default">
+            <!-- if this props is passed -->
+            <tbody v-if="propsToRender" class="text-16 text-default">
+                <tr v-for="(item, index) in menus" :key="index">
+                    <td v-for="(prop, _index) in propsToRender" :key="_index"
+                        :class="{ ['text-' + item[prop]?.toString().toLowerCase()]: prop.toLowerCase() === 'status' }">
+                        {{ item[prop] || 'N/A' }}
+                    </td>
+                    <td>
+                        <button v-if="actionIsButton" @click="$emit('item-clicked', item)">
+                            <div :class="actionClass" style="font-size: 14px;">
+                                <div>{{ actionTitle }}</div>
+                            </div>
+                        </button>
+                        <nuxt-link v-else :to="urlPrefix + item.id">
+                            <div :class="actionClass" style="font-size: 14px;">
+                                <div>{{ actionTitle }}</div>
+                            </div>
+                        </nuxt-link>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody v-else class="text-16 text-default">
                 <tr v-for="(item, index) in menus" :key="index">
                     <td v-for="(value, key) in item" :key="key"
                         :class="{ ['text-' + value.toLowerCase()]: key.toLowerCase() === 'status' }">
@@ -42,6 +63,10 @@ export default {
         heads: {
             type: Array,
             default: null
+        },
+        propsToRender: {
+            type: Array,
+            default: undefined
         },
         // refer to data of table, so it should match the number or size header
         menus: {
@@ -99,6 +124,9 @@ export default {
 
 
 .text-attend {
+    color: '#07D735';
+}
+.text-present {
     color: '#07D735';
 }
 

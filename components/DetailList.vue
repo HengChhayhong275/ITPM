@@ -141,7 +141,10 @@ export default {
 };
 </script>
 <style scoped>
-.text-attend {
+.text-attend{
+    color: '#07D735';
+}
+.text-present{
     color: '#07D735';
 }
 
