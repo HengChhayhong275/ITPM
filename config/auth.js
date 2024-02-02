@@ -3,10 +3,10 @@ export default {
     keycloak: {
       scheme: 'oauth2',
       endpoints: {
-        authorization: `${process.env.KEYCLOAK_REMOTE_HOST}/auth/realms/${process.env.KEYCLOAK_REALM}/protocol/openid-connect/auth`,
-        token: `${process.env.KEYCLOAK_REMOTE_HOST}/auth/realms/${process.env.KEYCLOAK_REALM}/protocol/openid-connect/token`,
+        authorization: `${process.env.KEYCLOAK_REMOTE_HOST}/realms/${process.env.KEYCLOAK_REALM}/protocol/openid-connect/auth`,
+        token: `${process.env.KEYCLOAK_REMOTE_HOST}/realms/${process.env.KEYCLOAK_REALM}/protocol/openid-connect/token`,
         logout:
-          `${process.env.KEYCLOAK_REMOTE_HOST}/auth/realms/${process.env.KEYCLOAK_REALM}/protocol/openid-connect/logout?redirect_uri=` +
+          `${process.env.KEYCLOAK_REMOTE_HOST}/realms/${process.env.KEYCLOAK_REALM}/protocol/openid-connect/logout?redirect_uri=` +
           encodeURIComponent(String(process.env.REMOTE_API)),
       },
       token: {
@@ -22,16 +22,19 @@ export default {
       responseType: 'code',
       grantType: 'authorization_code',
       clientId: process.env.KEYCLOAK_CLIENT_ID,
+      redirectUri: 'http://localhost:3000/user-profile/attendance',
       scope: ['openid', 'profile', 'email'],
       codeChallengeMethod: 'S256',
     },
   },
+
   resetOnError: true,
   redirect: {
     login: '/',
     logout: '/',
-    home: false,
+    home: false ,
     callback: '/',
   },
-  plugins: [{ src: '~/plugins/axios.js', ssr: true }, '~/plugins/auth.js'],
+  plugins: [{ src: '~/plugins/axios.js', ssr: true }, '~/plugins/auth.js'] ,
+  
 }
