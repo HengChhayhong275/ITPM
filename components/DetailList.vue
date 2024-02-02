@@ -14,7 +14,7 @@
             <ul class="p-4 flex flex-wrap gap-5 w-full justify-center text-16 text-default">
                 <li v-for="(value, prop) in detail" :key="prop" class="w-[35%] flex">
                     <div class="w-[50%] font-semibold">{{ prop[0].toUpperCase() + prop.slice(1) }}</div>
-                    <div class="w-[50%]" :class="{ ['text-' + value.toLowerCase()]: prop.toLowerCase() === 'status' }">{{ value }}</div>
+                    <div class="w-[50%]" :class="{ ['text-' + value?.toLowerCase()]: prop?.toLowerCase() === 'status' }">{{ value }}</div>
                 </li>
             </ul>
             </div>

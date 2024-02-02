@@ -16,11 +16,11 @@ export default {
   // components: {
   //   test,
   // },
-  layout: 'testlayout'
-  , asyncData({ app }) {
-    // Redirect to Keycloak login
-    app.$auth.loginWith('keycloak');
-  },
+  // layout: 'testlayout'
+  // , asyncData({ app }) {
+  //   // Redirect to Keycloak login
+  //   app.$auth.loginWith('keycloak');
+  // },
 };
 </script>
 <style scoped>
