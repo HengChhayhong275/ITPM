@@ -1,5 +1,6 @@
 import resolveProxy from '~/lib/resolveProxy'
 const noProxy = process.env.noProxy
+const token=''
 
 export default function ({ $axios, $auth }) {
   $axios.onError((error) => {
@@ -19,6 +20,8 @@ export default function ({ $axios, $auth }) {
 
   $axios.onRequest((config) => {
     if (noProxy) config.url = resolveProxy(config.url)
+
+    config.headers.common.Authorization = `Bearer ${token}`;
 
     // config.headers.common.accept = 'application/json'
     // config.headers.post['Content-Type'] = 'application/json'
