@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <HeaderMobileMenu :menus="menus" />
-    <HeaderLogin />
+    <HeaderLogin/>
     <HeaderTopNav :menus="menus" />
     <div class="content shadow-lg p-4">
         <nuxt-child />
