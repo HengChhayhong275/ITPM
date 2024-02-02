@@ -31,7 +31,7 @@
         <!-- BEGIN: Account Menu -->
         <!-- <div class="intro-x dropdown w-8 h-8"> -->
         <div>
-            <a-button type="primary">Login</a-button>
+            <a-button type="primary" @click="$auth.loginWith('keycloak')">Login</a-button>
         </div>
         <!-- END: Account Menu -->
         </div>
@@ -74,6 +74,9 @@
       }
     },
     methods: {
+      login(){
+        this.$auth.loginWith("keycloak");
+      },
       ...mapMutations([
         'toggleSideMenu',
         'togglePagesMenu',
